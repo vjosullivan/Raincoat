@@ -64,15 +64,13 @@ extension DataPoint {
 fileprivate func OptionalDate(timeIntervalSince1970 value: AnyObject?) -> Date? {
     if let value = value as? Double {
         return Date(timeIntervalSince1970: value)
-    } else {
-        return nil
     }
+    return nil
 }
 
 fileprivate func OptionalMeasurement<UnitType: Unit>(value: AnyObject?, unit: UnitType) -> Measurement<UnitType>? {
     if let value = value as? Double {
         return Measurement(value: value, unit: unit)
-    } else {
-        return nil
     }
+    return nil
 }
