@@ -7,13 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		343BA01C1D9A593E003AAC9C /* DarkSkyUnitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343BA01B1D9A593E003AAC9C /* DarkSkyUnitsTests.swift */; };
+		343FDB1A1D99BDAD00689412 /* DataPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FDB191D99BDAD00689412 /* DataPointTests.swift */; };
+		3470407C1D9570850024BDF1 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 3470407B1D9570850024BDF1 /* empty.json */; };
+		3470407E1D9570A30024BDF1 /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 3470407D1D9570A30024BDF1 /* invalid.json */; };
+		347040801D9570BF0024BDF1 /* junk.json in Resources */ = {isa = PBXBuildFile; fileRef = 3470407F1D9570BF0024BDF1 /* junk.json */; };
+		347040821D9570E20024BDF1 /* simple.json in Resources */ = {isa = PBXBuildFile; fileRef = 347040811D9570E20024BDF1 /* simple.json */; };
+		347040841D9576D10024BDF1 /* DarkSkyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347040831D9576D10024BDF1 /* DarkSkyForecast.swift */; };
+		347040861D9576F70024BDF1 /* DarkSkyForecastInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347040851D9576F70024BDF1 /* DarkSkyForecastInit.swift */; };
+		347040881D9693C20024BDF1 /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347040871D9693C20024BDF1 /* DataPoint.swift */; };
+		3470408A1D9694020024BDF1 /* DataPointInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347040891D9694020024BDF1 /* DataPointInit.swift */; };
+		3470408C1D97A5C80024BDF1 /* DarkSkyUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3470408B1D97A5C80024BDF1 /* DarkSkyUnits.swift */; };
+		3470408E1D97E56D0024BDF1 /* raincoat1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3470408D1D97E56D0024BDF1 /* raincoat1.png */; };
 		34CFC6021D91A837008762B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC6011D91A837008762B0 /* AppDelegate.swift */; };
 		34CFC6041D91A837008762B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC6031D91A837008762B0 /* ViewController.swift */; };
 		34CFC6071D91A837008762B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34CFC6051D91A837008762B0 /* Main.storyboard */; };
 		34CFC6091D91A837008762B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34CFC6081D91A837008762B0 /* Assets.xcassets */; };
 		34CFC60C1D91A837008762B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34CFC60A1D91A837008762B0 /* LaunchScreen.storyboard */; };
-		34CFC6171D91A837008762B0 /* RaincoatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC6161D91A837008762B0 /* RaincoatTests.swift */; };
-		34CFC6221D91A837008762B0 /* RaincoatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC6211D91A837008762B0 /* RaincoatUITests.swift */; };
+		34CFC6321D91B928008762B0 /* DarkSkyClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC6311D91B928008762B0 /* DarkSkyClientTests.swift */; };
+		34CFC6341D91B9B0008762B0 /* DarkSkyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC6331D91B9B0008762B0 /* DarkSkyClient.swift */; };
+		34CFC6361D91D2EC008762B0 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC6351D91D2EC008762B0 /* Location.swift */; };
+		34CFC6381D91DB8F008762B0 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC6371D91DB8F008762B0 /* LocationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,16 +38,21 @@
 			remoteGlobalIDString = 34CFC5FD1D91A837008762B0;
 			remoteInfo = Raincoat;
 		};
-		34CFC61E1D91A837008762B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 34CFC5F61D91A837008762B0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 34CFC5FD1D91A837008762B0;
-			remoteInfo = Raincoat;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		343BA01B1D9A593E003AAC9C /* DarkSkyUnitsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkSkyUnitsTests.swift; sourceTree = "<group>"; };
+		343FDB191D99BDAD00689412 /* DataPointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPointTests.swift; sourceTree = "<group>"; };
+		3470407B1D9570850024BDF1 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
+		3470407D1D9570A30024BDF1 /* invalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid.json; sourceTree = "<group>"; };
+		3470407F1D9570BF0024BDF1 /* junk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = junk.json; sourceTree = "<group>"; };
+		347040811D9570E20024BDF1 /* simple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = simple.json; sourceTree = "<group>"; };
+		347040831D9576D10024BDF1 /* DarkSkyForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkSkyForecast.swift; sourceTree = "<group>"; };
+		347040851D9576F70024BDF1 /* DarkSkyForecastInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkSkyForecastInit.swift; sourceTree = "<group>"; };
+		347040871D9693C20024BDF1 /* DataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPoint.swift; sourceTree = "<group>"; };
+		347040891D9694020024BDF1 /* DataPointInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPointInit.swift; sourceTree = "<group>"; };
+		3470408B1D97A5C80024BDF1 /* DarkSkyUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkSkyUnits.swift; sourceTree = "<group>"; };
+		3470408D1D97E56D0024BDF1 /* raincoat1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = raincoat1.png; sourceTree = "<group>"; };
 		34CFC5FE1D91A837008762B0 /* Raincoat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raincoat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34CFC6011D91A837008762B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34CFC6031D91A837008762B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,11 +61,11 @@
 		34CFC60B1D91A837008762B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34CFC60D1D91A837008762B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34CFC6121D91A837008762B0 /* RaincoatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaincoatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		34CFC6161D91A837008762B0 /* RaincoatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaincoatTests.swift; sourceTree = "<group>"; };
 		34CFC6181D91A837008762B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34CFC61D1D91A837008762B0 /* RaincoatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaincoatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		34CFC6211D91A837008762B0 /* RaincoatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaincoatUITests.swift; sourceTree = "<group>"; };
-		34CFC6231D91A837008762B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34CFC6311D91B928008762B0 /* DarkSkyClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkSkyClientTests.swift; sourceTree = "<group>"; };
+		34CFC6331D91B9B0008762B0 /* DarkSkyClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkSkyClient.swift; sourceTree = "<group>"; };
+		34CFC6351D91D2EC008762B0 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		34CFC6371D91DB8F008762B0 /* LocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +83,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		34CFC61A1D91A837008762B0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -79,7 +91,6 @@
 			children = (
 				34CFC6001D91A837008762B0 /* Raincoat */,
 				34CFC6151D91A837008762B0 /* RaincoatTests */,
-				34CFC6201D91A837008762B0 /* RaincoatUITests */,
 				34CFC5FF1D91A837008762B0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,7 +100,6 @@
 			children = (
 				34CFC5FE1D91A837008762B0 /* Raincoat.app */,
 				34CFC6121D91A837008762B0 /* RaincoatTests.xctest */,
-				34CFC61D1D91A837008762B0 /* RaincoatUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,6 +107,7 @@
 		34CFC6001D91A837008762B0 /* Raincoat */ = {
 			isa = PBXGroup;
 			children = (
+				34CFC62F1D91B5F8008762B0 /* DarkSky */,
 				34CFC6011D91A837008762B0 /* AppDelegate.swift */,
 				34CFC6031D91A837008762B0 /* ViewController.swift */,
 				34CFC6051D91A837008762B0 /* Main.storyboard */,
@@ -110,19 +121,40 @@
 		34CFC6151D91A837008762B0 /* RaincoatTests */ = {
 			isa = PBXGroup;
 			children = (
-				34CFC6161D91A837008762B0 /* RaincoatTests.swift */,
+				34CFC6301D91B850008762B0 /* DarkSky */,
 				34CFC6181D91A837008762B0 /* Info.plist */,
 			);
 			path = RaincoatTests;
 			sourceTree = "<group>";
 		};
-		34CFC6201D91A837008762B0 /* RaincoatUITests */ = {
+		34CFC62F1D91B5F8008762B0 /* DarkSky */ = {
 			isa = PBXGroup;
 			children = (
-				34CFC6211D91A837008762B0 /* RaincoatUITests.swift */,
-				34CFC6231D91A837008762B0 /* Info.plist */,
+				34CFC6331D91B9B0008762B0 /* DarkSkyClient.swift */,
+				34CFC6351D91D2EC008762B0 /* Location.swift */,
+				347040831D9576D10024BDF1 /* DarkSkyForecast.swift */,
+				347040851D9576F70024BDF1 /* DarkSkyForecastInit.swift */,
+				347040871D9693C20024BDF1 /* DataPoint.swift */,
+				347040891D9694020024BDF1 /* DataPointInit.swift */,
+				3470408B1D97A5C80024BDF1 /* DarkSkyUnits.swift */,
+				3470408D1D97E56D0024BDF1 /* raincoat1.png */,
 			);
-			path = RaincoatUITests;
+			path = DarkSky;
+			sourceTree = "<group>";
+		};
+		34CFC6301D91B850008762B0 /* DarkSky */ = {
+			isa = PBXGroup;
+			children = (
+				34CFC6311D91B928008762B0 /* DarkSkyClientTests.swift */,
+				34CFC6371D91DB8F008762B0 /* LocationTests.swift */,
+				3470407B1D9570850024BDF1 /* empty.json */,
+				3470407D1D9570A30024BDF1 /* invalid.json */,
+				3470407F1D9570BF0024BDF1 /* junk.json */,
+				347040811D9570E20024BDF1 /* simple.json */,
+				343FDB191D99BDAD00689412 /* DataPointTests.swift */,
+				343BA01B1D9A593E003AAC9C /* DarkSkyUnitsTests.swift */,
+			);
+			name = DarkSky;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,30 +195,15 @@
 			productReference = 34CFC6121D91A837008762B0 /* RaincoatTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		34CFC61C1D91A837008762B0 /* RaincoatUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 34CFC62C1D91A837008762B0 /* Build configuration list for PBXNativeTarget "RaincoatUITests" */;
-			buildPhases = (
-				34CFC6191D91A837008762B0 /* Sources */,
-				34CFC61A1D91A837008762B0 /* Frameworks */,
-				34CFC61B1D91A837008762B0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				34CFC61F1D91A837008762B0 /* PBXTargetDependency */,
-			);
-			name = RaincoatUITests;
-			productName = RaincoatUITests;
-			productReference = 34CFC61D1D91A837008762B0 /* RaincoatUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		34CFC5F61D91A837008762B0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Vincent O'Sullivan";
@@ -197,12 +214,6 @@
 						ProvisioningStyle = Automatic;
 					};
 					34CFC6111D91A837008762B0 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 27QRRWZMS6;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 34CFC5FD1D91A837008762B0;
-					};
-					34CFC61C1D91A837008762B0 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 27QRRWZMS6;
 						ProvisioningStyle = Automatic;
@@ -225,7 +236,6 @@
 			targets = (
 				34CFC5FD1D91A837008762B0 /* Raincoat */,
 				34CFC6111D91A837008762B0 /* RaincoatTests */,
-				34CFC61C1D91A837008762B0 /* RaincoatUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,6 +247,7 @@
 			files = (
 				34CFC60C1D91A837008762B0 /* LaunchScreen.storyboard in Resources */,
 				34CFC6091D91A837008762B0 /* Assets.xcassets in Resources */,
+				3470408E1D97E56D0024BDF1 /* raincoat1.png in Resources */,
 				34CFC6071D91A837008762B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,13 +256,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		34CFC61B1D91A837008762B0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				347040801D9570BF0024BDF1 /* junk.json in Resources */,
+				347040821D9570E20024BDF1 /* simple.json in Resources */,
+				3470407C1D9570850024BDF1 /* empty.json in Resources */,
+				3470407E1D9570A30024BDF1 /* invalid.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +271,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				34CFC6041D91A837008762B0 /* ViewController.swift in Sources */,
+				34CFC6341D91B9B0008762B0 /* DarkSkyClient.swift in Sources */,
+				3470408C1D97A5C80024BDF1 /* DarkSkyUnits.swift in Sources */,
+				347040861D9576F70024BDF1 /* DarkSkyForecastInit.swift in Sources */,
+				34CFC6361D91D2EC008762B0 /* Location.swift in Sources */,
+				347040841D9576D10024BDF1 /* DarkSkyForecast.swift in Sources */,
 				34CFC6021D91A837008762B0 /* AppDelegate.swift in Sources */,
+				347040881D9693C20024BDF1 /* DataPoint.swift in Sources */,
+				3470408A1D9694020024BDF1 /* DataPointInit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,15 +286,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34CFC6171D91A837008762B0 /* RaincoatTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		34CFC6191D91A837008762B0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				34CFC6221D91A837008762B0 /* RaincoatUITests.swift in Sources */,
+				343FDB1A1D99BDAD00689412 /* DataPointTests.swift in Sources */,
+				343BA01C1D9A593E003AAC9C /* DarkSkyUnitsTests.swift in Sources */,
+				34CFC6381D91DB8F008762B0 /* LocationTests.swift in Sources */,
+				34CFC6321D91B928008762B0 /* DarkSkyClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,11 +300,6 @@
 			isa = PBXTargetDependency;
 			target = 34CFC5FD1D91A837008762B0 /* Raincoat */;
 			targetProxy = 34CFC6131D91A837008762B0 /* PBXContainerItemProxy */;
-		};
-		34CFC61F1D91A837008762B0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 34CFC5FD1D91A837008762B0 /* Raincoat */;
-			targetProxy = 34CFC61E1D91A837008762B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -467,34 +472,6 @@
 			};
 			name = Release;
 		};
-		34CFC62D1D91A837008762B0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 27QRRWZMS6;
-				INFOPLIST_FILE = RaincoatUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vjosullivan.RaincoatUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Raincoat;
-			};
-			name = Debug;
-		};
-		34CFC62E1D91A837008762B0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 27QRRWZMS6;
-				INFOPLIST_FILE = RaincoatUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vjosullivan.RaincoatUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Raincoat;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -514,6 +491,7 @@
 				34CFC6281D91A837008762B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34CFC6291D91A837008762B0 /* Build configuration list for PBXNativeTarget "RaincoatTests" */ = {
 			isa = XCConfigurationList;
@@ -522,14 +500,7 @@
 				34CFC62B1D91A837008762B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		34CFC62C1D91A837008762B0 /* Build configuration list for PBXNativeTarget "RaincoatUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				34CFC62D1D91A837008762B0 /* Debug */,
-				34CFC62E1D91A837008762B0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
