@@ -17,5 +17,9 @@ struct DarkSkyForecast {
     
     let timeZone: String
     
-    let current: DataPoint
+    let current: DataPoint?
+    
+    let minutely: DetailedForecast?
+    let hourly:   DetailedForecast?
+    let daily:    DetailedForecast?
 }

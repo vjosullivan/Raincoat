@@ -20,8 +20,8 @@ extension DataPoint {
         apparentTemperature    = OptionalMeasurement(value: dictionary["apparentTemperature"],    unit: forecastUnits.temperature())
         apparentTemperatureMax = OptionalMeasurement(value: dictionary["apparentTemperatureMax"], unit: forecastUnits.temperature())
         apparentTemperatureMin = OptionalMeasurement(value: dictionary["apparentTemperatureMin"], unit: forecastUnits.temperature())
-        apparentTemperatureMaxTime = OptionalDate(timeIntervalSince1970: dictionary["apparentTemperatureMaxTime"])
-        apparentTemperatureMinTime = OptionalDate(timeIntervalSince1970: dictionary["apparentTemperatureMinTime"])
+        apparentTemperatureMaxTime = Date(unixDate: dictionary["apparentTemperatureMaxTime"])
+        apparentTemperatureMinTime = Date(unixDate: dictionary["apparentTemperatureMinTime"])
 
         cloudCover = dictionary["cloudCover"]?.doubleValue
         dewPoint   = OptionalMeasurement(value: dictionary["dewPoint"], unit: forecastUnits.temperature())
@@ -37,7 +37,7 @@ extension DataPoint {
         precipAccumulation = OptionalMeasurement(value: dictionary["precipAccumulation"], unit: forecastUnits.accumulation())
         precipIntensity    = OptionalMeasurement(value: dictionary["precipIntensity"],    unit: forecastUnits.rainIntensity())
         precipIntensityMax = OptionalMeasurement(value: dictionary["precipIntensityMax"], unit: forecastUnits.rainIntensity())
-        precipIntensityMaxTime = OptionalDate(timeIntervalSince1970: dictionary["precipIntensityMaxTime"])
+        precipIntensityMaxTime = Date(unixDate: dictionary["precipIntensityMaxTime"])
         precipProbability = dictionary["precipProbability"]?.doubleValue
         precipType = dictionary["precipType"] as? String
 
@@ -45,27 +45,35 @@ extension DataPoint {
 
         summary = dictionary["summary"] as? String
         
-        sunriseTime = OptionalDate(timeIntervalSince1970: dictionary["sunriseTime"])
-        sunsetTime  = OptionalDate(timeIntervalSince1970: dictionary["sunsetTime"])
+        sunriseTime = Date(unixDate: dictionary["sunriseTime"])
+        sunsetTime  = Date(unixDate: dictionary["sunsetTime"])
 
         temperature    = OptionalMeasurement(value: dictionary["temperature"],    unit: forecastUnits.temperature())
         temperatureMax = OptionalMeasurement(value: dictionary["temperatureMax"], unit: forecastUnits.temperature())
         temperatureMin = OptionalMeasurement(value: dictionary["temperatureMin"], unit: forecastUnits.temperature())
-        temperatureMaxTime = OptionalDate(timeIntervalSince1970: dictionary["temperatureMaxTime"])
-        temperatureMinTime = OptionalDate(timeIntervalSince1970: dictionary["temperatureMinTime"])
+        temperatureMaxTime = Date(unixDate: dictionary["temperatureMaxTime"])
+        temperatureMinTime = Date(unixDate: dictionary["temperatureMinTime"])
 
         visibility  = OptionalMeasurement(value: dictionary["visibility"],  unit: forecastUnits.distance())
         windBearing = OptionalMeasurement(value: dictionary["windBearing"], unit: forecastUnits.angle())
         windSpeed   = OptionalMeasurement(value: dictionary["windSpeed"],   unit: forecastUnits.windSpeed())
     }
-    
 }
 
-fileprivate func OptionalDate(timeIntervalSince1970 value: AnyObject?) -> Date? {
-    if let value = value as? Double {
-        return Date(timeIntervalSince1970: value)
+fileprivate extension Date {
+    
+    /// Returns a `Date` provided it can be generated from the supplied data.
+    ///
+    /// - parameter value: A Unix date value.
+    ///
+    /// - returns: A `Date` provided it can be generated from the supplied data, otherwise nil.
+    ///
+    init?(unixDate: AnyObject?) {
+        guard let value = unixDate as? TimeInterval else {
+            return nil
+        }
+        self.init(timeIntervalSince1970: value)
     }
-    return nil
 }
 
 fileprivate func OptionalMeasurement<UnitType: Unit>(value: AnyObject?, unit: UnitType) -> Measurement<UnitType>? {

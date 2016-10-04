@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2333a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2338c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="weathericons-regular-webfont.ttf">
+            <string>WeatherIcons-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -140,8 +145,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNj-XT-qOz">
+                                <frame key="frameInset" minX="139" minY="468" width="96" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="48"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Icon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tw-d8-Pjr">
-                                <frame key="frameInset" minX="16" minY="467" width="343" height="21"/>
+                                <frame key="frameInset" minX="16" minY="572" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -162,7 +174,7 @@
                         <outlet property="dewPoint" destination="ets-Ed-P3B" id="ebm-OH-nfd"/>
                         <outlet property="forecastTimestamp" destination="SrG-Ic-ZWT" id="pd2-NE-1eG"/>
                         <outlet property="humidityLabel" destination="XcQ-Ix-gjC" id="cFr-9U-KmV"/>
-                        <outlet property="iconLabel" destination="3Tw-d8-Pjr" id="KsC-f0-i3x"/>
+                        <outlet property="iconLabel" destination="3Tw-d8-Pjr" id="dKl-2j-W9l"/>
                         <outlet property="location" destination="Hdo-Nb-AEI" id="PMn-Xf-BOU"/>
                         <outlet property="maxTemperature" destination="x5d-y3-IC9" id="s8j-ah-LfV"/>
                         <outlet property="minTemperature" destination="9LD-qm-vHi" id="Ub8-lU-XXg"/>
@@ -172,6 +184,7 @@
                         <outlet property="summaryLabel" destination="bAd-n7-GRh" id="0ub-ej-DCz"/>
                         <outlet property="sunTimes" destination="OWz-2l-g5l" id="0gw-Wo-u8F"/>
                         <outlet property="temperature" destination="tbl-fQ-Xmi" id="F96-XA-Dn5"/>
+                        <outlet property="weatherIconLabel" destination="SNj-XT-qOz" id="f7n-RJ-ZDN"/>
                         <outlet property="windLabel" destination="JZn-3r-wkK" id="EuD-jG-m3n"/>
                     </connections>
                 </viewController>

@@ -32,6 +32,8 @@ struct DataPoint {
     let humidity: Double?
 
     /// A text summary of this data point, suitable for selecting an icon for display.  Optional.
+    /// Known possible values: clear-day, clear-night, rain, snow, sleet, wind, fog, cloudy, partly-cloudy-day
+    /// or partly-cloudy-night. (Also hail, thunderstorm or tornado)
     let icon: String?
 
     /// The fractional part of the lunation number during the given day.  Only on daily data point.  Optional.

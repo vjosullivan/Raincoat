@@ -19,6 +19,10 @@ extension DarkSkyForecast {
         
         timeZone = dictionary["timezone"] as! String
         
-        current = DataPoint(dictionary: dictionary["currently"] as! [String: AnyObject], forecastUnits: forecastUnits)!
+        current = DataPoint(dictionary: dictionary["currently"] as! [String: AnyObject], forecastUnits: forecastUnits)
+        
+        minutely = DetailedForecast(dictionary: dictionary["minutely"] as? [String: AnyObject], forecastUnits: forecastUnits)
+        hourly   = DetailedForecast(dictionary: dictionary["hourly"] as? [String: AnyObject], forecastUnits: forecastUnits)
+        daily    = DetailedForecast(dictionary: dictionary["daily"] as? [String: AnyObject], forecastUnits: forecastUnits)
     }
 }
