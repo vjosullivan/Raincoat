@@ -30,6 +30,7 @@
 		34CFC6341D91B9B0008762B0 /* DarkSkyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC6331D91B9B0008762B0 /* DarkSkyClient.swift */; };
 		34CFC6361D91D2EC008762B0 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC6351D91D2EC008762B0 /* Location.swift */; };
 		34CFC6381D91DB8F008762B0 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC6371D91DB8F008762B0 /* LocationTests.swift */; };
+		34F662B61DA51C4500BB6302 /* compass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F662B51DA51C4500BB6302 /* compass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		34CFC6331D91B9B0008762B0 /* DarkSkyClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkSkyClient.swift; sourceTree = "<group>"; };
 		34CFC6351D91D2EC008762B0 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		34CFC6371D91DB8F008762B0 /* LocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
+		34F662B51DA51C4500BB6302 /* compass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = compass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				3470408B1D97A5C80024BDF1 /* DarkSkyUnits.swift */,
 				3470408D1D97E56D0024BDF1 /* raincoat1.png */,
 				3486A3E81DA0317D0075156E /* DetailedForecast.swift */,
+				34F662B51DA51C4500BB6302 /* compass.swift */,
 			);
 			path = DarkSky;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				34CFC6361D91D2EC008762B0 /* Location.swift in Sources */,
 				347040841D9576D10024BDF1 /* DarkSkyForecast.swift in Sources */,
 				34CFC6021D91A837008762B0 /* AppDelegate.swift in Sources */,
+				34F662B61DA51C4500BB6302 /* compass.swift in Sources */,
 				347040881D9693C20024BDF1 /* DataPoint.swift in Sources */,
 				3470408A1D9694020024BDF1 /* DataPointInit.swift in Sources */,
 			);

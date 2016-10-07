@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         }
         print("\n\n\n\n")
         
-        let darkSky = DarkSkyClient(location: Location(latitude: 53.3, longitude: -1.0))
+        let darkSky = DarkSkyClient(location: Location(latitude: 51.5, longitude: -0.5))
         darkSky.fetchForecast{ darkSkyForecast in
             print("Wahey! 4")
             DispatchQueue.main.async {
@@ -104,7 +104,12 @@ class ViewController: UIViewController {
             moonLabel.text = "⋅"
         }
         summaryLabel.text = forecast.current?.summary!
-        windLabel.text = "Wind: \(forecast.current?.windSpeed!) at \(forecast.current?.windBearing!)"
+        if let speed = forecast.current?.windSpeed {
+            windLabel.text = "Wind: \(speed)"
+            if let bearing = forecast.current?.windBearing {
+                windLabel.text = windLabel.text! + " at \(bearing)"
+            }
+        }
         if let precipType = forecast.current?.precipType {
             rainLabel.text = precipType
         } else {
@@ -132,7 +137,7 @@ class ViewController: UIViewController {
         case "sleet":
             iconRef = "\u{f0b5}"
         case "wind":
-            iconRef = "\u{f021}"
+            iconRef = "\u{f050}"
         case "fog":
             iconRef = "\u{f014}"
         case "cloudy":
