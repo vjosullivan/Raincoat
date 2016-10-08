@@ -33,20 +33,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("\n\n\n\n")
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
-        print("\n\n\n\n")
-        
         let darkSky = DarkSkyClient(location: Location(latitude: 51.5, longitude: -0.5))
         darkSky.fetchForecast{ darkSkyForecast in
-            print("Wahey! 4")
             DispatchQueue.main.async {
                 self.update(forecast: darkSkyForecast)
             }
@@ -56,106 +44,69 @@ class ViewController: UIViewController {
     func update(forecast: DarkSkyForecast) {
         print("\n\n\(forecast)\n\n")
         location.text = "\(abs(forecast.latitude.value))°\(forecast.latitude.value >= 0 ? "N" : "S"), \(abs(forecast.longitude.value))°\(forecast.longitude.value >= 0 ? "E" : "W")"
-        if let sunrise = forecast.current?.sunriseTime {
-            sunTimes.text = "Sunrise ⋅ Sunset: \(local(time: sunrise, formattedAs: "HH:mm")) ⋅ \(local(time: (forecast.current?.sunsetTime!)!, formattedAs: "HH:mm"))"
-        } else {
-            sunTimes.text = "⋅"
+        sunTimes.text = "No solar data."
+        temperature.text = "⋅"
+        apparentTemperature.text = "⋅"
+        maxTemperature.text = "⋅"
+        minTemperature.text = "⋅"
+        dewPoint.text = "⋅"
+        cloudLabel.text = "⋅"
+        pressure.text = "⋅"
+        humidityLabel.text = "⋅"
+        moonLabel.text = "No lunar data."
+        summaryLabel.text = "Summary: Weather expected"
+        rainLabel.text = "No precipitation"
+        iconLabel.text = "⋅"
+        guard let the = forecast.current else {
+            return
         }
-        forecastTimestamp.text = "Conditions at \(local(time: (forecast.current?.time)!, formattedAs: "HH:mm"))"
-        if let temp = forecast.current?.temperature {
+        if let sunrise = the.sunriseTime {
+            sunTimes.text = "Sunrise ⋅ Sunset: \(local(time: sunrise, formattedAs: "HH:mm")) ⋅ \(local(time: the.sunsetTime!, formattedAs: "HH:mm"))"
+        }
+        forecastTimestamp.text = "Conditions at \(local(time: the.time, formattedAs: "HH:mm"))"
+        if let temp = the.temperature {
             temperature.text = "Temperature: \(Int(temp.value))\(temp.unit.symbol)"
-        } else {
-            temperature.text = "⋅"
         }
-        if let temp = forecast.current?.apparentTemperature {
+        if let temp = the.apparentTemperature {
             apparentTemperature.text = "Feels like: \(Int(temp.value))\(temp.unit.symbol)"
-        } else {
-            apparentTemperature.text = "⋅"
         }
-        if let maxTemp = forecast.current?.temperatureMax {
+        if let maxTemp = the.temperatureMax {
             maxTemperature.text = "Max today: \(maxTemp)"
-        } else {
-            maxTemperature.text = "⋅"
         }
-        if let minTemp = forecast.current?.temperatureMin {
+        if let minTemp = the.temperatureMin {
             minTemperature.text = "Min today: \(minTemp)"
-        } else {
-            minTemperature.text = "⋅"
         }
-        if let value = forecast.current?.dewPoint {
+        if let value = the.dewPoint {
             dewPoint.text = "\(value.value >= 0 ? "Dew" : "Frost") point: \(value)"
-        } else {
-            dewPoint.text = "⋅"
         }
-        if let value = forecast.current?.pressure {
+        if let value = the.pressure {
             pressure.text = "Pressure: \(Int(value.value)) \(value.unit.symbol)"
-        } else {
-            pressure.text = "⋅"
         }
-        if let value = forecast.current?.humidity {
+        if let value = the.humidity {
             humidityLabel.text = "Humidity: \(Int(value * 100))%"
-        } else {
-            humidityLabel.text = "⋅"
         }
-        cloudLabel.text = "Cloud cover: \(Int((forecast.current?.cloudCover!)! * 100.0))%"
-        if let moonPhase = forecast.current?.moonPhase {
+        if let cloudValue = the.cloudCover {
+            cloudLabel.text = "Cloud cover: \(Int(cloudValue * 100.0))%"
+        }
+        if let moonPhase = the.moonPhase {
             moonLabel.text = "Moon: \(moonPhase)"
-        } else {
-            moonLabel.text = "⋅"
         }
-        summaryLabel.text = forecast.current?.summary!
-        if let speed = forecast.current?.windSpeed {
+        if let summary = the.summary {
+            summaryLabel.text = "Summary: \(summary)"
+        }
+        if let speed = the.windSpeed {
             windLabel.text = "Wind: \(speed)"
-            if let bearing = forecast.current?.windBearing {
+            if let bearing = the.windBearing {
                 windLabel.text = windLabel.text! + " at \(bearing)"
             }
         }
-        if let precipType = forecast.current?.precipType {
-            rainLabel.text = precipType
-        } else {
-            rainLabel.text = "No precipitation"
+        if let precipType = the.precipType {
+            rainLabel.text = "Precipitation type: \(precipType)"
         }
-        if let iconText = forecast.current?.icon {
-            iconLabel.text = "\(iconText)"
-            weatherIconLabel.text = weatherIcon(name:iconText)
-        } else {
-            iconLabel.text = "⋅"
+        if let iconText = the.icon {
+            iconLabel.text = "Icon: \"\(iconText)\""
+            weatherIconLabel.text = WeatherIcon(rawValue: iconText)?.iconRef ?? "?!"
         }
-    }
-    
-    private func weatherIcon(name: String) -> String {
-        var iconRef = ""
-        switch name {
-        case "clear-day":
-            iconRef = "\u{f00d}"
-        case "clear-night":
-            iconRef = "\u{f02e}"
-        case "rain":
-            iconRef = "\u{f019}"
-        case "snow":
-            iconRef = "\u{f01b}"
-        case "sleet":
-            iconRef = "\u{f0b5}"
-        case "wind":
-            iconRef = "\u{f050}"
-        case "fog":
-            iconRef = "\u{f014}"
-        case "cloudy":
-            iconRef = "\u{f041}"
-        case "partly-cloudy-day":
-            iconRef = "\u{f002}"
-        case "partly-cloudy-night":
-            iconRef = "\u{f086}"
-        case "hail":
-            iconRef = "\u{f015}"
-        case "thunderstorm":
-            iconRef = "\u{f01e}"
-        case "tornado":
-            iconRef = "\u{f056}"
-        default:
-            iconRef = ""
-        }
-        return iconRef
     }
     
     func local(time: Date, formattedAs: String) -> String {

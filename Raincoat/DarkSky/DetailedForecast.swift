@@ -13,7 +13,7 @@ struct DetailedForecast {
     let summary: String?
     let icon: String?
     
-    let data: [DataPoint]?
+    let dataPoints: [DataPoint]?
 }
 
 extension DetailedForecast {
@@ -25,15 +25,15 @@ extension DetailedForecast {
         summary = dictionary["summary"] as? String
         icon    = dictionary["icon"] as? String
         
-        data = [DataPoint]()
+        dataPoints = [DataPoint]()
         if let dataList = dictionary["data"] as? [[String: AnyObject]] {
             for dataPoint in dataList {
                 if let detail = DataPoint(dictionary: dataPoint, forecastUnits: forecastUnits) {
-                    data?.append(detail)
+                    dataPoints?.append(detail)
                 }
             }
         }
-        if summary == nil && icon == nil && data?.count == 0 {
+        if summary == nil && icon == nil && dataPoints?.count == 0 {
             return nil
         }
     }
