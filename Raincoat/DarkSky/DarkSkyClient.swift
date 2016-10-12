@@ -41,15 +41,12 @@ struct DarkSkyClient {
     }
 
     func fetchData(completionHandler handler: @escaping DarkSkyHandler) {
-        print("Wahey2")
         let task = URLSession.shared.dataTask(with: url, completionHandler: handler)
         task.resume()
     }
     
     func fetchForecast(completionHandler: @escaping (DarkSkyForecast) -> Void) {
-        print("Wahey! 1")
         fetchData{(data, response, error) in
-            print("\n\nWahey! 3\n\n\(data)")
             let json = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: AnyObject]
             let forecast = DarkSkyForecast(dictionary: json)
             completionHandler(forecast)

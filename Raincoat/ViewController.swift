@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
 
@@ -29,19 +30,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var iconLabel: UILabel!
  
     @IBOutlet weak var weatherIconLabel: UILabel!
+    @IBOutlet weak var moonIconLabel: UILabel!
+    
+    private var locationCoordinates: Location? = nil
+    private var locationController: LocationController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let darkSky = DarkSkyClient(location: Location(latitude: 51.5, longitude: -0.5))
-        darkSky.fetchForecast{ darkSkyForecast in
-            DispatchQueue.main.async {
-                self.update(forecast: darkSkyForecast)
-            }
-        }
+        locationController = LocationController(delegate: self)
+        locationController?.requestLocation()
     }
     
-    func update(forecast: DarkSkyForecast) {
+    func update(using forecast: DarkSkyForecast) {
         print("\n\n\(forecast)\n\n")
         location.text = "\(abs(forecast.latitude.value))°\(forecast.latitude.value >= 0 ? "N" : "S"), \(abs(forecast.longitude.value))°\(forecast.longitude.value >= 0 ? "E" : "W")"
         sunTimes.text = "No solar data."
@@ -89,7 +89,10 @@ class ViewController: UIViewController {
             cloudLabel.text = "Cloud cover: \(Int(cloudValue * 100.0))%"
         }
         if let moonPhase = the.moonPhase {
-            moonLabel.text = "Moon: \(moonPhase)"
+            moonLabel.text = MoonIcon(phase: moonPhase)!.face
+        } else {
+            moonLabel.text = "No lunar data."
+            moonIconLabel.text = MoonIcon(phase: 0.27)!.face
         }
         if let summary = the.summary {
             summaryLabel.text = "Summary: \(summary)"
@@ -115,6 +118,30 @@ class ViewController: UIViewController {
         formatter.dateFormat = formattedAs
         formatter.timeZone = TimeZone.current
         return formatter.string(from: time)
+    }
+}
+
+extension ViewController: LocationControllerDelegate {
+    
+    func location(controller: LocationController, didUpdateLocation location: Location) {
+        print("VOS08")
+        let darkSky = DarkSkyClient(location: location)
+        darkSky.fetchForecast{ darkSkyForecast in
+            DispatchQueue.main.async {
+                self.update(using: darkSkyForecast)
+            }
+        }
+    }
+    
+    func location(controller: LocationController, didFailWithError error: Error) {
+        print("VOS09")
+//        DispatchQueue.main.async {
+//            self.updateView(forecast: nilForecast)
+//        }
+        let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.\n\n\(error)", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
