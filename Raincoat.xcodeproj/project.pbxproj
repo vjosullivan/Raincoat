@@ -29,6 +29,7 @@
 		3486A3E91DA0317D0075156E /* DetailedForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3486A3E81DA0317D0075156E /* DetailedForecast.swift */; };
 		349DA01D1DAA41F700A37AA4 /* MoonIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349DA01C1DAA41F700A37AA4 /* MoonIcon.swift */; };
 		34AFB8561DB0105700336A81 /* CompassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFB8551DB0105700336A81 /* CompassTests.swift */; };
+		34AFB8581DB0266200336A81 /* MoonIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFB8571DB0266200336A81 /* MoonIconTests.swift */; };
 		34CFC6021D91A837008762B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC6011D91A837008762B0 /* AppDelegate.swift */; };
 		34CFC6041D91A837008762B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC6031D91A837008762B0 /* ViewController.swift */; };
 		34CFC6071D91A837008762B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34CFC6051D91A837008762B0 /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		3486A3E81DA0317D0075156E /* DetailedForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedForecast.swift; sourceTree = "<group>"; };
 		349DA01C1DAA41F700A37AA4 /* MoonIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoonIcon.swift; sourceTree = "<group>"; };
 		34AFB8551DB0105700336A81 /* CompassTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassTests.swift; sourceTree = "<group>"; };
+		34AFB8571DB0266200336A81 /* MoonIconTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoonIconTests.swift; sourceTree = "<group>"; };
 		34CFC5FE1D91A837008762B0 /* Raincoat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Raincoat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34CFC6011D91A837008762B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34CFC6031D91A837008762B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				3436582D1DA8EF8700B3E9DD /* WeatherIconTests.swift */,
 				3436582F1DA8F34400B3E9DD /* DetailedForecastTests.swift */,
 				34AFB8551DB0105700336A81 /* CompassTests.swift */,
+				34AFB8571DB0266200336A81 /* MoonIconTests.swift */,
 			);
 			name = DarkSky;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				343FDB1A1D99BDAD00689412 /* DataPointTests.swift in Sources */,
 				34AFB8561DB0105700336A81 /* CompassTests.swift in Sources */,
 				343BA01C1D9A593E003AAC9C /* DarkSkyUnitsTests.swift in Sources */,
+				34AFB8581DB0266200336A81 /* MoonIconTests.swift in Sources */,
 				34CFC6381D91DB8F008762B0 /* LocationTests.swift in Sources */,
 				34CFC6321D91B928008762B0 /* DarkSkyClientTests.swift in Sources */,
 				343658301DA8F34400B3E9DD /* DetailedForecastTests.swift in Sources */,

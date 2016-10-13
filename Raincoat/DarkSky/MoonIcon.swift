@@ -37,8 +37,10 @@ struct MoonIcon {
     }
     
     var shadow: String {
-        let day0 = 0x95 + moonDay(phase: phase)
-        return "\\u{f0\(String(day0, radix: 16))}"
+        let dayOf28 = moonDay(phase: phase)
+        // The icon for day 0 is not in the same sequence as the other icons.
+        let day = dayOf28 == 0 ? 0xf0eb : 0xf0cf + moonDay(phase: phase)
+        return String(Character(UnicodeScalar(day)!))
     }
 }
 
