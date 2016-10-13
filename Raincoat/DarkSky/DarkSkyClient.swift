@@ -22,7 +22,6 @@ struct DarkSkyClient {
     /// Initialises a `DarkSkyClient` with a set location.
     ///
     /// - parameter location: A location on the Earth's surface.
-    ///
     /// - returns: A `DarkSkyClient` dedicated to the suppled location.
     ///
     init(location: Location) {
@@ -33,7 +32,6 @@ struct DarkSkyClient {
     /// Initialiser: Utilises "dependency injection" to initialise the client with a predefined URL.
     ///
     /// - parameter url: A URL (usually containing test data).
-    ///
     /// - returns: A `DarkSkyClient` initialised with test data.
     ///
     public init(url: URL) {
@@ -48,8 +46,9 @@ struct DarkSkyClient {
     func fetchForecast(completionHandler: @escaping (DarkSkyForecast) -> Void) {
         fetchData{(data, response, error) in
             let json = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: AnyObject]
-            let forecast = DarkSkyForecast(dictionary: json)
-            completionHandler(forecast)
+            if let forecast = DarkSkyForecast(dictionary: json) {
+                completionHandler(forecast)
+            }
         }
     }
 }

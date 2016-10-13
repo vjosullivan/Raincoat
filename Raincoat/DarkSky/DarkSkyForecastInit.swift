@@ -10,16 +10,25 @@ import Foundation
 
 extension DarkSkyForecast {
     
-    init(dictionary: [String: AnyObject]) {
-        
-        forecastUnits = DarkSkyUnits.from(string: dictionary["flags"]?["units"] as! String)
+    init?(dictionary: [String: AnyObject]) {
+        guard let units = dictionary["flags"]?["units"] as? String,
+            let latitudeValue = dictionary["latitude"] as? Double,
+            let longitudeValue = dictionary["longitude"] as? Double,
+            let timeZoneValue = dictionary["timezone"] as? String else {
+            return nil
+        }
+        forecastUnits = DarkSkyUnits.from(string: units)
 
-        latitude  = Measurement(value: dictionary["latitude"] as! Double, unit: forecastUnits.angle)
-        longitude = Measurement(value: dictionary["longitude"] as! Double, unit: forecastUnits.angle)
+        latitude  = Measurement(value: latitudeValue, unit: forecastUnits.angle)
+        longitude = Measurement(value: longitudeValue, unit: forecastUnits.angle)
         
-        timeZone = dictionary["timezone"] as! String
+        timeZone = timeZoneValue
         
-        current = DataPoint(dictionary: dictionary["currently"] as! [String: AnyObject], forecastUnits: forecastUnits)
+        if let currentWeather = dictionary["currently"] as? [String: AnyObject] {
+            current = DataPoint(dictionary: currentWeather, forecastUnits: forecastUnits)
+        } else {
+            current = nil
+        }
         
         minutely = DetailedForecast(dictionary: dictionary["minutely"] as? [String: AnyObject], forecastUnits: forecastUnits)
         hourly   = DetailedForecast(dictionary: dictionary["hourly"] as? [String: AnyObject], forecastUnits: forecastUnits)
