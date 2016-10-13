@@ -45,32 +45,6 @@ class LocationController: CLLocationManager {
         super.requestWhenInUseAuthorization()
         print("VOS06a: Requested authorization.")
     }
-    
-    // authorization status
-    func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        print("Location status changed...")
-        var shouldIAllow = false
-        
-        switch status {
-        case CLAuthorizationStatus.restricted:
-            locationStatus = "Restricted Access to location"
-        case CLAuthorizationStatus.denied:
-            locationStatus = "User denied access to location"
-        case CLAuthorizationStatus.notDetermined:
-            locationStatus = "Status not determined"
-        default:
-            locationStatus = "Allowed to location Access"
-            shouldIAllow = true
-        }
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LabelHasbeenUpdated"), object: nil)
-        if (shouldIAllow == true) {
-            NSLog("Location to Allowed")
-            // Start location services
-            startUpdatingLocation()
-        } else {
-            NSLog("Denied access: \(locationStatus)")
-        }
-    }
 }
 
 extension LocationController: CLLocationManagerDelegate {
