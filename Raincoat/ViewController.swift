@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var temperature: UILabel!
     @IBOutlet weak var apparentTemperature: UILabel!
     @IBOutlet weak var maxTemperature: UILabel!
-    @IBOutlet weak var minTemperature: UILabel!
     @IBOutlet weak var dewPoint: UILabel!
     @IBOutlet weak var pressure: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
@@ -43,38 +42,34 @@ class ViewController: UIViewController {
     
     func update(using forecast: DarkSkyForecast) {
         print("\n\n\(forecast)\n\n")
-        location.text = "\(abs(forecast.latitude.value))°\(forecast.latitude.value >= 0 ? "N" : "S"), \(abs(forecast.longitude.value))°\(forecast.longitude.value >= 0 ? "E" : "W")"
-        sunTimes.text = "No solar data."
+        location.text = "\(abs(round(forecast.latitude.value * 10) / 10))°\(forecast.latitude.value >= 0 ? "N" : "S"), \(abs(round(forecast.longitude.value * 10) / 10))°\(forecast.longitude.value >= 0 ? "E" : "W")"
+        sunTimes.text = "Sunrise: 07:34 ⋅ Sunset: 19:35"
         temperature.text = "⋅"
         apparentTemperature.text = "⋅"
-        maxTemperature.text = "⋅"
-        minTemperature.text = "⋅"
+        maxTemperature.text = "Min: 8°C ⋅ Max: 19°C"
         dewPoint.text = "⋅"
         cloudLabel.text = "⋅"
         pressure.text = "⋅"
         humidityLabel.text = "⋅"
-        moonLabel.text = "No lunar data."
+        moonLabel.text = "(No lunar data.)"
         summaryLabel.text = "Summary: Weather expected"
         rainLabel.text = "No precipitation"
         iconLabel.text = "⋅"
         guard let the = forecast.current else {
             return
         }
-        if let sunrise = the.sunriseTime {
-            sunTimes.text = "Sunrise ⋅ Sunset: \(local(time: sunrise, formattedAs: "HH:mm")) ⋅ \(local(time: the.sunsetTime!, formattedAs: "HH:mm"))"
+        if let sunrise = the.sunriseTime, let sunset = the.sunsetTime {
+            sunTimes.text = "Sunrise ⋅ Sunset: \(local(time: sunrise, formattedAs: "HH:mm")) ⋅ \(local(time: sunset, formattedAs: "HH:mm"))"
         }
-        forecastTimestamp.text = "Conditions at \(local(time: the.time, formattedAs: "HH:mm"))"
+        forecastTimestamp.text = "Conditions as at \(local(time: the.time, formattedAs: "HH:mm"))"
         if let temp = the.temperature {
             temperature.text = "Temperature: \(Int(temp.value))\(temp.unit.symbol)"
         }
         if let temp = the.apparentTemperature {
             apparentTemperature.text = "Feels like: \(Int(temp.value))\(temp.unit.symbol)"
         }
-        if let maxTemp = the.temperatureMax {
-            maxTemperature.text = "Max today: \(maxTemp)"
-        }
-        if let minTemp = the.temperatureMin {
-            minTemperature.text = "Min today: \(minTemp)"
+        if let maxTemp = the.temperatureMax, let minTemp = the.temperatureMin {
+            maxTemperature.text = "Max: \(maxTemp) ⋅ Min: \(minTemp)"
         }
         if let value = the.dewPoint {
             dewPoint.text = "\(value.value >= 0 ? "Dew" : "Frost") point: \(value)"
@@ -91,16 +86,15 @@ class ViewController: UIViewController {
         if let moonPhase = the.moonPhase {
             moonLabel.text = MoonIcon(phase: moonPhase)!.face
         } else {
-            moonLabel.text = "No lunar data."
-            moonIconLabel.text = MoonIcon(phase: 0.27)!.face
+            moonIconLabel.text = MoonIcon(phase: 0.8)!.face
         }
         if let summary = the.summary {
             summaryLabel.text = "Summary: \(summary)"
         }
         if let speed = the.windSpeed {
-            windLabel.text = "Wind: \(speed)"
+            windLabel.text = "Wind: \(Int(round(speed.value)))\(speed.unit.symbol)"
             if let bearing = the.windBearing {
-                windLabel.text = windLabel.text! + " at \(bearing)"
+                windLabel.text = windLabel.text! + " from the \(Compass(degrees: bearing.value).rawValue)"
             }
         }
         if let precipType = the.precipType {

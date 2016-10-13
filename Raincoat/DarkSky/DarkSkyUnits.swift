@@ -41,7 +41,7 @@ enum DarkSkyUnits {
         }
     }
     
-    func temperature() -> UnitTemperature {
+    var temperature: UnitTemperature {
         switch self {
         case .si, .ca, .uk2:
             return .celsius
@@ -50,11 +50,11 @@ enum DarkSkyUnits {
         }
     }
     
-    func angle() -> UnitAngle {
+    var angle: UnitAngle {
         return .degrees
     }
     
-    func rainIntensity() -> UnitSpeed {
+    var rainIntensity: UnitSpeed {
         switch self {
         case .si, .ca, .uk2:
             return .millimetersPerHour
@@ -63,7 +63,7 @@ enum DarkSkyUnits {
         }
     }
     
-    func airPressure() -> UnitPressure {
+    var airPressure: UnitPressure {
         switch self {
         case .si, .ca, .uk2:
             return .hectopascals
@@ -72,7 +72,8 @@ enum DarkSkyUnits {
         }
     }
     
-    func windSpeed() -> UnitSpeed {
+    ///  The units used for measuring wind speed.
+    var windSpeed: UnitSpeed {
         switch self {
         case .si:
             return .metersPerSecond
@@ -85,7 +86,7 @@ enum DarkSkyUnits {
         }
     }
     
-    func distance() -> UnitLength {
+    var distance: UnitLength {
         switch self {
         case .si, .ca:
             return .kilometers
@@ -94,7 +95,7 @@ enum DarkSkyUnits {
         }
     }
     
-    func accumulation() -> UnitLength {
+    var accumulation: UnitLength {
         switch self {
         case .si, .ca, .uk2:
             return .millimeters

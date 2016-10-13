@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2338c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11535.1" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11523"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,19 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Raincoat" translatesAutoresizingMaskIntoConstraints="NO" id="WM6-JF-jNo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R A I N C O A T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="33" translatesAutoresizingMaskIntoConstraints="NO" id="i1c-cb-hve" userLabel="brandLabel">
+                                <rect key="frame" x="16" y="207" width="343" height="96"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="108" id="CdN-qk-4Pt"/>
-                                    <constraint firstAttribute="height" constant="108" id="tR3-GF-9yE"/>
+                                    <constraint firstAttribute="height" constant="96" id="6jk-6A-Mym"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="33" translatesAutoresizingMaskIntoConstraints="NO" id="i1c-cb-hve" userLabel="brandLabel">
-                                <frame key="frameInset" minX="16" minY="217" width="343" height="192"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="192" id="6jk-6A-Mym"/>
-                                </constraints>
-                                <string key="text">R A I N C O A T
-W E A T H E R ?</string>
                                 <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="86"/>
                                 <color key="textColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -40,9 +35,7 @@ W E A T H E R ?</string>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.058823529411764705" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="i1c-cb-hve" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="Gvx-g8-WJr"/>
-                            <constraint firstItem="WM6-JF-jNo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="-5.5" id="XyB-lM-yg3"/>
-                            <constraint firstItem="i1c-cb-hve" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-100.5" id="igQ-Ir-zTf"/>
-                            <constraint firstItem="WM6-JF-jNo" firstAttribute="top" secondItem="i1c-cb-hve" secondAttribute="bottom" constant="88" id="jj6-5U-zym"/>
+                            <constraint firstItem="i1c-cb-hve" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-78.5" id="igQ-Ir-zTf"/>
                             <constraint firstItem="i1c-cb-hve" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="x8K-Pb-hzB"/>
                         </constraints>
                     </view>
@@ -52,7 +45,4 @@ W E A T H E R ?</string>
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Raincoat" width="58" height="58"/>
-    </resources>
 </document>

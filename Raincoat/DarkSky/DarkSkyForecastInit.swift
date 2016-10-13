@@ -14,8 +14,8 @@ extension DarkSkyForecast {
         
         forecastUnits = DarkSkyUnits.from(string: dictionary["flags"]?["units"] as! String)
 
-        latitude  = Measurement(value: dictionary["latitude"] as! Double, unit: forecastUnits.angle())
-        longitude = Measurement(value: dictionary["longitude"] as! Double, unit: forecastUnits.angle())
+        latitude  = Measurement(value: dictionary["latitude"] as! Double, unit: forecastUnits.angle)
+        longitude = Measurement(value: dictionary["longitude"] as! Double, unit: forecastUnits.angle)
         
         timeZone = dictionary["timezone"] as! String
         

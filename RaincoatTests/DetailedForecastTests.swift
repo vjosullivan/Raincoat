@@ -11,9 +11,12 @@ import XCTest
 
 class DetailedForecastTests: XCTestCase {
    
+    // Nil data results in a nil forecast object.
     func testNilDictionary() {
         XCTAssertNil(DetailedForecast(dictionary: nil, forecastUnits: DarkSkyUnits.si))
     }
+    
+    // Empty data results in a nil forecast object.
     func testEmptyDictionary() {
         let emptyDictionary = [String: AnyObject]()
         XCTAssertNil(DetailedForecast(dictionary: emptyDictionary, forecastUnits: DarkSkyUnits.si))
@@ -27,8 +30,8 @@ class DetailedForecastTests: XCTestCase {
     }
     func testDetails() {
         var dictionary: [String: AnyObject] = ["summary": "sunny" as AnyObject, "icon": "clear-day" as AnyObject]
-        let detail1: [String: AnyObject]    = ["time": 1476489601 as AnyObject, "cloudCover": 0.5 as AnyObject]
-        let detail2: [String: AnyObject]    = ["time": 1476489602 as AnyObject, "cloudCover": 1 as AnyObject]
+        let detail1: [String: AnyObject]    = ["time": 147_648_900.0 as AnyObject, "cloudCover": 0.5 as AnyObject]
+        let detail2: [String: AnyObject]    = ["time": 147_648_960.0 as AnyObject, "cloudCover": 1 as AnyObject]
         dictionary["data"] = [detail1, detail2] as AnyObject
         let forecast = DetailedForecast(dictionary: dictionary, forecastUnits: DarkSkyUnits.si)
         XCTAssertNotNil(forecast)

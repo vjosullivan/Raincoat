@@ -13,12 +13,12 @@ class DataPointTests: XCTestCase {
     
     func testInitAllValues() {
         let json: [String: AnyObject] = [
-            "time": 140_000_000 as AnyObject,
+            "time": 140_000_000.0 as AnyObject,
             "apparentTemperature": 13.5 as AnyObject,
             "apparentTemperatureMax": 12.3 as AnyObject,
             "apparentTemperatureMin": 9.8 as AnyObject,
-            "apparentTemperatureMaxTime": 145_000_000 as AnyObject,
-            "apparentTemperatureMinTime": 146_000_000 as AnyObject,
+            "apparentTemperatureMaxTime": 145_000_000.0 as AnyObject,
+            "apparentTemperatureMinTime": 146_000_000.0 as AnyObject,
             "cloudCover": 0.25 as AnyObject,
             "dewPoint": 5.7 as AnyObject,
             "humidity": 0.75 as AnyObject,
@@ -30,30 +30,30 @@ class DataPointTests: XCTestCase {
             "precipAccumulation": 2.5 as AnyObject,
             "precipIntensity": 1.25 as AnyObject,
             "precipIntensityMax": 1.75 as AnyObject,
-            "precipIntensityMaxTime": 150_000_000 as AnyObject,
+            "precipIntensityMaxTime": 150_000_000.0 as AnyObject,
             "precipProbability": 0.55 as AnyObject,
             "precipType": "sleet" as AnyObject,
             "pressure": 23.5 as AnyObject,
             "summary": "fine" as AnyObject,
-            "sunriseTime": 147_123_456 as AnyObject,
-            "sunsetTime": 147_654_321 as AnyObject,
+            "sunriseTime": 147_123_456.0 as AnyObject,
+            "sunsetTime": 147_654_321.0 as AnyObject,
             "temperature": 13.5 as AnyObject,
             "temperatureMax": 12.3 as AnyObject,
             "temperatureMin": 9.8 as AnyObject,
-            "temperatureMaxTime": 145_000_000 as AnyObject,
-            "temperatureMinTime": 146_000_000 as AnyObject,
+            "temperatureMaxTime": 145_000_000.0 as AnyObject,
+            "temperatureMinTime": 146_000_000.0 as AnyObject,
             "visibility": 5.5 as AnyObject,
             "windBearing": 43.2 as AnyObject,
             "windSpeed": 14.5 as AnyObject]
 
         let dataPoint = DataPoint(dictionary: json, forecastUnits: DarkSkyUnits.si)!
-        XCTAssertEqual(Date(timeIntervalSince1970: 140_000_000), dataPoint.time)
+        XCTAssertEqual(Date(timeIntervalSince1970: 140_000_000.0), dataPoint.time)
         
         XCTAssertEqual(Measurement(value: 13.5, unit: UnitTemperature.celsius), dataPoint.apparentTemperature!)
         XCTAssertEqual(Measurement(value: 12.3, unit: UnitTemperature.celsius), dataPoint.apparentTemperatureMax!)
         XCTAssertEqual(Measurement(value:  9.8, unit: UnitTemperature.celsius), dataPoint.apparentTemperatureMin!)
-        XCTAssertEqual(Date(timeIntervalSince1970: 145_000_000), dataPoint.apparentTemperatureMaxTime!)
-        XCTAssertEqual(Date(timeIntervalSince1970: 146_000_000), dataPoint.apparentTemperatureMinTime!)
+        XCTAssertEqual(Date(timeIntervalSince1970: 145_000_000.0), dataPoint.apparentTemperatureMaxTime!)
+        XCTAssertEqual(Date(timeIntervalSince1970: 146_000_000.0), dataPoint.apparentTemperatureMinTime!)
 
         XCTAssertEqual(0.25, dataPoint.cloudCover!)
         XCTAssertEqual(Measurement(value: 5.7, unit: UnitTemperature.celsius), dataPoint.dewPoint!)
@@ -69,7 +69,7 @@ class DataPointTests: XCTestCase {
         XCTAssertEqual(Measurement(value: 2.5,  unit: UnitLength.millimeters), dataPoint.precipAccumulation!)
         XCTAssertEqual(Measurement(value: 1.25, unit: UnitSpeed.millimetersPerHour), dataPoint.precipIntensity!)
         XCTAssertEqual(Measurement(value: 1.75, unit: UnitSpeed.millimetersPerHour), dataPoint.precipIntensityMax!)
-        XCTAssertEqual(Date(timeIntervalSince1970: 150_000_000), dataPoint.precipIntensityMaxTime!)
+        XCTAssertEqual(Date(timeIntervalSince1970: 150_000_000.0), dataPoint.precipIntensityMaxTime!)
         XCTAssertEqual(0.55, dataPoint.precipProbability!)
         XCTAssertEqual("sleet", dataPoint.precipType!)
         
@@ -77,14 +77,14 @@ class DataPointTests: XCTestCase {
         
         XCTAssertEqual("fine", dataPoint.summary!)
         
-        XCTAssertEqual(Date(timeIntervalSince1970: 147_123_456), dataPoint.sunriseTime!)
-        XCTAssertEqual(Date(timeIntervalSince1970: 147_654_321), dataPoint.sunsetTime!)
+        XCTAssertEqual(Date(timeIntervalSince1970: 147_123_456.0), dataPoint.sunriseTime!)
+        XCTAssertEqual(Date(timeIntervalSince1970: 147_654_321.0), dataPoint.sunsetTime!)
         
         XCTAssertEqual(Measurement(value: 13.5, unit: UnitTemperature.celsius), dataPoint.temperature!)
         XCTAssertEqual(Measurement(value: 12.3, unit: UnitTemperature.celsius), dataPoint.temperatureMax!)
         XCTAssertEqual(Measurement(value:  9.8, unit: UnitTemperature.celsius), dataPoint.temperatureMin!)
-        XCTAssertEqual(Date(timeIntervalSince1970: 145_000_000), dataPoint.temperatureMaxTime!)
-        XCTAssertEqual(Date(timeIntervalSince1970: 146_000_000), dataPoint.temperatureMinTime!)
+        XCTAssertEqual(Date(timeIntervalSince1970: 145_000_000.0), dataPoint.temperatureMaxTime!)
+        XCTAssertEqual(Date(timeIntervalSince1970: 146_000_000.0), dataPoint.temperatureMinTime!)
         
         XCTAssertEqual(Measurement(value:  5.5, unit: UnitLength.kilometers), dataPoint.visibility!)
         XCTAssertEqual(Measurement(value: 43.2, unit: UnitAngle.degrees), dataPoint.windBearing!)
@@ -92,10 +92,10 @@ class DataPointTests: XCTestCase {
     }
     
     func testInitNoOptionalValues() {
-        let json: [String: AnyObject] = ["time": 140_000_000 as AnyObject]
+        let json: [String: AnyObject] = ["time": 140_000_000.0 as AnyObject]
         let units = DarkSkyUnits.si
         let dataPoint = DataPoint(dictionary: json, forecastUnits: units)!
-        XCTAssertEqual(Date(timeIntervalSince1970: 140_000_000), dataPoint.time)
+        XCTAssertEqual(Date(timeIntervalSince1970: 140_000_000.0), dataPoint.time)
 
         XCTAssertNil(dataPoint.apparentTemperature)
         XCTAssertNil(dataPoint.apparentTemperatureMax)
@@ -140,7 +140,7 @@ class DataPointTests: XCTestCase {
 }
     
     func testInitNoTime() {
-        let json: [String: AnyObject] = ["noTime": 140_000_000 as AnyObject]
+        let json: [String: AnyObject] = ["noTime": 140_000_000.0 as AnyObject]
         let units = DarkSkyUnits.si
         let dataPoint = DataPoint(dictionary: json, forecastUnits: units)
         XCTAssertNil(dataPoint)
