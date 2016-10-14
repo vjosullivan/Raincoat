@@ -86,7 +86,7 @@ class ViewController: UIViewController {
         if let moonPhase = the.moonPhase {
             moonLabel.text = MoonIcon(phase: moonPhase)!.face
         } else {
-            moonIconLabel.text = MoonIcon(phase: 0.8)!.face
+            moonIconLabel.text = MoonIcon(phase: 0.9)!.face
         }
         if let summary = the.summary {
             summaryLabel.text = "Summary: \(summary)"

@@ -16,6 +16,8 @@
 		343658301DA8F34400B3E9DD /* DetailedForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3436582F1DA8F34400B3E9DD /* DetailedForecastTests.swift */; };
 		343BA01C1D9A593E003AAC9C /* DarkSkyUnitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343BA01B1D9A593E003AAC9C /* DarkSkyUnitsTests.swift */; };
 		343FDB1A1D99BDAD00689412 /* DataPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FDB191D99BDAD00689412 /* DataPointTests.swift */; };
+		3463A1FB1DB11BF600FB5738 /* RainIntensity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463A1FA1DB11BF600FB5738 /* RainIntensity.swift */; };
+		3463A1FD1DB11D4E00FB5738 /* RainIntensityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463A1FC1DB11D4E00FB5738 /* RainIntensityTests.swift */; };
 		3470407C1D9570850024BDF1 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 3470407B1D9570850024BDF1 /* empty.json */; };
 		3470407E1D9570A30024BDF1 /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 3470407D1D9570A30024BDF1 /* invalid.json */; };
 		347040801D9570BF0024BDF1 /* junk.json in Resources */ = {isa = PBXBuildFile; fileRef = 3470407F1D9570BF0024BDF1 /* junk.json */; };
@@ -62,6 +64,8 @@
 		3436582F1DA8F34400B3E9DD /* DetailedForecastTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedForecastTests.swift; sourceTree = "<group>"; };
 		343BA01B1D9A593E003AAC9C /* DarkSkyUnitsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkSkyUnitsTests.swift; sourceTree = "<group>"; };
 		343FDB191D99BDAD00689412 /* DataPointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPointTests.swift; sourceTree = "<group>"; };
+		3463A1FA1DB11BF600FB5738 /* RainIntensity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainIntensity.swift; sourceTree = "<group>"; };
+		3463A1FC1DB11D4E00FB5738 /* RainIntensityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RainIntensityTests.swift; sourceTree = "<group>"; };
 		3470407B1D9570850024BDF1 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		3470407D1D9570A30024BDF1 /* invalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid.json; sourceTree = "<group>"; };
 		3470407F1D9570BF0024BDF1 /* junk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = junk.json; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				34F662B51DA51C4500BB6302 /* Compass.swift */,
 				3436582B1DA8DD1100B3E9DD /* WeatherIcon.swift */,
 				349DA01C1DAA41F700A37AA4 /* MoonIcon.swift */,
+				3463A1FA1DB11BF600FB5738 /* RainIntensity.swift */,
 			);
 			path = DarkSky;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 				34AFB8551DB0105700336A81 /* CompassTests.swift */,
 				34AFB8571DB0266200336A81 /* MoonIconTests.swift */,
 				34AFB8591DB02CE500336A81 /* DarkSkyForecastInitTests.swift */,
+				3463A1FC1DB11D4E00FB5738 /* RainIntensityTests.swift */,
 			);
 			name = DarkSky;
 			sourceTree = "<group>";
@@ -338,6 +344,7 @@
 				34F662B61DA51C4500BB6302 /* Compass.swift in Sources */,
 				347040881D9693C20024BDF1 /* DataPoint.swift in Sources */,
 				3470408A1D9694020024BDF1 /* DataPointInit.swift in Sources */,
+				3463A1FB1DB11BF600FB5738 /* RainIntensity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +361,7 @@
 				34CFC6321D91B928008762B0 /* DarkSkyClientTests.swift in Sources */,
 				343658301DA8F34400B3E9DD /* DetailedForecastTests.swift in Sources */,
 				3436582E1DA8EF8700B3E9DD /* WeatherIconTests.swift in Sources */,
+				3463A1FD1DB11D4E00FB5738 /* RainIntensityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
