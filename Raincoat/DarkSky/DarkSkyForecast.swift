@@ -22,4 +22,18 @@ struct DarkSkyForecast {
     let minutely: DetailedForecast?
     let hourly:   DetailedForecast?
     let daily:    DetailedForecast?
+    
+//    var precipIntensityArray: [Double]? {
+//        var array = [Double]()
+//        if let minutes = minutely?.dataPoints {
+//            for data in minutes {
+//                if let intensity = data.precipIntensity?.value {
+//                    array.append(intensity)
+//                } else {
+//                    array.append(0.0)
+//                }
+//            }
+//        }
+//        return array.count > 0 ? array : nil
+//    }
 }

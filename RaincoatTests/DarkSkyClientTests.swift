@@ -12,7 +12,7 @@ import XCTest
 class DarkSkyClientTests: XCTestCase {
     
     private var callCount = 0
-    let homeLocation = Location(latitude: 88.3, longitude: -1.0)
+    let homeLocation = Location(latitude: 58.3, longitude: -1.0)
     
     override func setUp() {
         callCount = 0

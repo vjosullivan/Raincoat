@@ -76,6 +76,13 @@ fileprivate extension Date {
     }
 }
 
+
+/// Returns a `Measurement` provided it can be created using the supplied data, otherwise `nil`.
+///
+/// - Parameters:
+///   - value: The numeric value of the measurement.
+///   - unit: The measurement units (e.g. mph, °C, etc.).
+/// - Returns: A valid `Measurement` or `nil`.
 fileprivate func OptionalMeasurement<UnitType: Unit>(value: AnyObject?, unit: UnitType) -> Measurement<UnitType>? {
     if let value = value as? Double {
         return Measurement(value: value, unit: unit)
