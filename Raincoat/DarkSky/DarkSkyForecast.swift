@@ -23,6 +23,14 @@ struct DarkSkyForecast {
     let hourly:   DetailedForecast?
     let daily:    DetailedForecast?
     
+//    lazy var temperatureRise: Double? = {
+//        if let currentTemperature = self.current?.apparentTemperature?.value,
+//            let oneHourTemperature = self.hourly?.dataPoints?[0].apparentTemperature?.value {
+//            return oneHourTemperature - currentTemperature
+//        }
+//        return nil
+//    }()
+    
 //    var precipIntensityArray: [Double]? {
 //        var array = [Double]()
 //        if let minutes = minutely?.dataPoints {
