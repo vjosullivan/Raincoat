@@ -58,8 +58,8 @@ class ViewController: UIViewController {
         guard let the = forecast.current else {
             return
         }
-        if let sunrise = the.sunriseTime, let sunset = the.sunsetTime {
-            sunTimes.text = "Sunrise ⋅ Sunset: \(local(time: sunrise, formattedAs: "HH:mm")) ⋅ \(local(time: sunset, formattedAs: "HH:mm"))"
+        if let sunrise = forecast.today?.sunriseTime, let sunset = forecast.today?.sunsetTime {
+            sunTimes.text = "Sunrise \(local(time: sunrise, formattedAs: "H:mm")) ⋅ Sunset: \(local(time: sunset, formattedAs: "H:mm"))"
             sunTimes.isHidden = false
         } else {
             sunTimes.isHidden = true
@@ -77,8 +77,9 @@ class ViewController: UIViewController {
         } else {
             apparentTemperature.isHidden = true
         }
-        if let maxTemp = the.temperatureMax, let minTemp = the.temperatureMin {
-            maxTemperature.text = "Max: \(maxTemp) ⋅ Min: \(minTemp)"
+        if let maxTemp = forecast.today?.temperatureMax, let maxTime = forecast.today?.temperatureMaxTime,
+            let minTemp = forecast.today?.temperatureMin, let minTime = forecast.today?.temperatureMinTime {
+            maxTemperature.text = "Min: \(minTemp) at \(local(time: minTime, formattedAs: "H:mm")) ⋅ Max: \(maxTemp) at \(local(time: maxTime, formattedAs: "H:mm"))"
             maxTemperature.isHidden = false
         } else {
             maxTemperature.isHidden = true
@@ -107,7 +108,7 @@ class ViewController: UIViewController {
         } else {
             cloudLabel.isHidden = true
         }
-        if let moonPhase = the.moonPhase {
+        if let moonPhase = forecast.today?.moonPhase {
             moonLabel.text = MoonIcon(phase: moonPhase)!.face
             moonIconLabel.text = MoonIcon(phase: moonPhase)!.face
             moonLabel.isHidden = false

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11535.1" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11523"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R A I N C O A T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="33" translatesAutoresizingMaskIntoConstraints="NO" id="i1c-cb-hve" userLabel="brandLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R A I N C O A T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="33" translatesAutoresizingMaskIntoConstraints="NO" id="i1c-cb-hve" userLabel="Raincoat label">
                                 <rect key="frame" x="16" y="207" width="343" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="6jk-6A-Mym"/>
@@ -31,10 +31,22 @@
                                 <color key="textColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by Dark Sky" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzR-JT-21A" userLabel="DarkSky label">
+                                <rect key="frame" x="16" y="619" width="343" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="I17-kB-A8s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="18"/>
+                                <color key="textColor" red="0.66897923235714285" green="0.66897923235714285" blue="0.22112702660817929" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.12156862745098039" green="0.058823529411764705" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="XzR-JT-21A" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="4mb-zR-er2"/>
                             <constraint firstItem="i1c-cb-hve" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="Gvx-g8-WJr"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="XzR-JT-21A" secondAttribute="bottom" id="Ls3-ea-g70"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XzR-JT-21A" secondAttribute="trailing" id="i4J-AU-hbS"/>
                             <constraint firstItem="i1c-cb-hve" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-78.5" id="igQ-Ir-zTf"/>
                             <constraint firstItem="i1c-cb-hve" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="x8K-Pb-hzB"/>
                         </constraints>
